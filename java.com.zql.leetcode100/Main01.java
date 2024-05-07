@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-/** 哈希表
+/** 哈希表 字符串转数组， 转列表
  * 输入：2 7 11 15
  * 9
  * 输出[0, 1]huo 0 1
