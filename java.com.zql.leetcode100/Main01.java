@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
+/** 哈希表
  * 输入：2 7 11 15
  * 9
  * 输出[0, 1]huo 0 1
@@ -20,7 +20,6 @@ public class Main01 {
         System.out.println();
         List<Integer> list = Arrays.stream(res).boxed().collect(Collectors.toList());
         System.out.println(list);
-
     }
 
     private static int[] twoSum(int[] num, int target) {
