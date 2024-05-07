@@ -1,2 +1,2 @@
-# offer
+# algorithm
 算法题
