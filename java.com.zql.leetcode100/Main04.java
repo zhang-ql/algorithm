@@ -12,10 +12,11 @@ public class Main04 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] str = in.nextLine().split(" ");
-//        int[] nums = Arrays.stream(str).mapToInt(Integer::parseInt).toArray();//Arrays的数组工具类
-        int[] nums = Stream.of(str).mapToInt(Integer::parseInt).toArray();//静态工厂
+        int[] nums = Arrays.stream(str).mapToInt(Integer::parseInt).toArray();//Arrays的数组工具类
+//        int[] nums = Stream.of(str).mapToInt(Integer::parseInt).toArray();//静态工厂
         new Main04().moveZeros(nums);
 //        Arrays.stream(nums).forEach(System.out::print);
+
         boolean isFirst = true;
         for (int num : nums) {
             if (!isFirst) {
@@ -24,6 +25,10 @@ public class Main04 {
             System.out.print(num);
             isFirst = false;
         }
+        String[] strings = Arrays.stream(nums).mapToObj(String::valueOf).toArray(String[]::new);
+        String join = String.join(" ", strings);
+        System.out.println();
+        System.out.println(join);
     }
 
     private void moveZeros(int[] nums) {
