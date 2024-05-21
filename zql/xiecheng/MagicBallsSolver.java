@@ -24,7 +24,6 @@ public class MagicBallsSolver {
         for (int key : ballsMap.keySet()) {
             minHeap.offer(key);
         }
-
         solveAndPrint(ballsMap, minHeap);
     }
 
@@ -45,7 +44,10 @@ public class MagicBallsSolver {
         List<Integer> finalBalls = new ArrayList<>();
         for (int key : ballsMap.keySet()) {
             int count = ballsMap.get(key);
-            for (int i = 0; i < count; i++) {
+//            for (int i = 0; i < count; i++) {
+//                finalBalls.add(key);
+//            }
+            if (count == 1) {
                 finalBalls.add(key);
             }
         }
