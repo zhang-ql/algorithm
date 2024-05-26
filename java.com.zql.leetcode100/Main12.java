@@ -25,10 +25,12 @@ public class Main12 {
             //进入更新窗口
             char c = s.charAt(right);
             right++;
-            if (need.containsKey(c)) {//need中有这个元素放入window,不一定把所有的元素都加进入，使用left和right来记录窗口的开始和结束
-                window.merge(c, 1, Integer::sum);
-                if (window.get(c).equals(need.get(c))) valid++;
-            }
+//            if (need.containsKey(c)) {//need中有这个元素放入window,不一定把所有的元素都加进入，使用left和right来记录窗口的开始和结束
+//                window.merge(c, 1, Integer::sum);
+//                if (window.get(c).equals(need.get(c))) valid++;
+//            }
+            window.merge(c, 1, Integer::sum);
+            if (window.get(c).equals(need.get(c))) valid++;
             //判断窗口是否收缩，出窗口
             while (valid == need.size()) {
                 if (right - left < minLen) {//更新最小窗口
