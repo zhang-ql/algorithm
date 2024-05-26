@@ -18,10 +18,11 @@ public class Main09 {
         in.close();
     }
 
+    //模板解法
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
         Map<Character, Integer> need = new HashMap<>(), window = new HashMap<>();
-        for (char c : p.toCharArray()) need.put(c, need.getOrDefault(c, 0) + 1);
+        for (char c : p.toCharArray()) need.merge(c, 1, Integer::sum);
         int left = 0, right = 0, valid = 0;
         //初始化窗口 记录最小覆盖子串的起始索引及长度
         //int len = Integer.MAX_VALUE, start = 0;
@@ -50,6 +51,7 @@ public class Main09 {
         }
         return res;
     }
+
 
     public List<Integer> findAnagrams1(String s, String p) {
         int n = s.length(), m = p.length();
