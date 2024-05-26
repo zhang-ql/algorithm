@@ -11,7 +11,7 @@ public class Main07 {
         System.out.println(ans);
     }
 
-    //双指针
+    //双指针 前缀、后缀最大值
     public int trap(int[] height) {
         int n = height.length;
         int ans = 0, left = 0, right = n - 1;
@@ -20,6 +20,23 @@ public class Main07 {
             pre_max = Math.max(pre_max, height[left]);
             suf_max = Math.max(suf_max, height[right]);
             ans += pre_max < suf_max ? pre_max - height[left++] : suf_max - height[right--];
+        }
+        return ans;
+    }
+
+    //单调栈
+    public int trap1(int[] height) {
+        int ans = 0;
+        Deque<Integer> dq = new ArrayDeque<>();
+        for (int i = 0; i < height.length; i++) {
+            while (!dq.isEmpty() && height[i] > height[dq.peek()]) {
+                int bottomH = height[dq.pop()];
+                if (dq.isEmpty()) break;
+                int left = dq.peek();
+                int dh = Math.min(height[left], height[i]) - bottomH;//高度
+                ans += dh * (i - left - 1);
+            }
+            dq.push(i);
         }
         return ans;
     }

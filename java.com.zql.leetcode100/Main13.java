@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
-
+//最大字数和，使用前缀和，接合题目找preSum和minPreSum
 public class Main13 {
     //最大子数组和
     //https://leetcode.cn/problems/maximum-subarray/description/?envType=study-plan-v2&envId=top-100-liked

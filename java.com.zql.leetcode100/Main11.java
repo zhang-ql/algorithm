@@ -1,6 +1,6 @@
 import java.util.*;
 //https://leetcode.cn/problems/sliding-window-maximum/?envType=study-plan-v2&envId=top-100-liked
-//滑动窗口最大值
+//滑动窗口最大值 使用大顶堆和单调栈
 //输入：nums = [1,3,-1,-3,5,3,6,7], k = 3
 //输出：[3,3,5,5,6,7]
 public class Main11 {
@@ -56,13 +56,13 @@ public class Main11 {
     public int[] maxSlidingWindow1(int[] nums, int k) {
         int n = nums.length;
         int[] ans = new int[n - k + 1];
-        Deque<Integer> q = new ArrayDeque<>(); // 双端队列
+        Deque<Integer> q = new ArrayDeque<>(); // 双端队列，保存是数组下标
         for (int i = 0; i < n; i++) {
             // 1. 入
             while (!q.isEmpty() && nums[q.getLast()] <= nums[i]) {
                 q.removeLast(); // 维护 q 的单调性
             }
-            q.addLast(i); // 入队
+            q.addLast(i); // 入队，全部加入
             // 2. 出
             if (i - q.getFirst() >= k) { // 队首已经离开窗口了
                 q.removeFirst();

@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main12 {
-    //最小覆盖字串
+    //最小覆盖字串 使用滑动窗口模板，1新建need和window的hashMap，2 进元素，3判断窗口是否收缩，4出窗口
     //https://leetcode.cn/problems/minimum-window-substring/submissions/534875948/?envType=study-plan-v2&envId=top-100-liked
     //输入：s = "ADOBECODEBANC", t = "ABC"
     //输出："BANC"
