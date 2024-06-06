@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Main18 {
+    //矩阵置零
     //输入：matrix = [[1,1,1],[1,0,1],[1,1,1]]
     //输出：[[1,0,1],[0,0,0],[1,0,1]]
     public static void main(String[] args) {
